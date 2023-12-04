@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="Vegetable Store,Hyperlocal Delivery Service,Bishnupur,Fresh Vegetable shop , order fresh vegetable online,Online Store,Shak, Sabji,Shaksabji, Shaksabji.com">
+	<meta name="description" content="We deliver fresh vegetable locally in Bishnupur city. Place order online form this site , and our team will deliver product to the user">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="theme-color" content="#005600" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#005600">
+    <meta name="apple-mobile-web-app-title" content="Shaksabji">
+    <link rel="manifest" href="/manifest.json">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Merienda+One|Baloo+Tamma+2&display=swap" rel="stylesheet">
+	<link rel="icon" href="res/logo/iconcm.png" type="image/png" sizes="16x20">
+	<title> Order vegetables online within bishnupur</title>
+</head>
+<body>
+	<div class="icondiv">
+	    <h1 id="logo">shaksabji.com</h1>
+		<div class="about" id="about">
+		    <h2>Know Our Service</h2>
+		    <h5>Stay Home , Stay Safe</h5>
+		    <h6>Wish a Healthy Life </h6>
+		    <button id="mrBtn" onclick=knowMore()>Know More.. </button>
+		    <ul id="mrTxt">
+		        <li>We take orders from 12:01pm to the 5:59am of next morning</li>
+		        <li>Rates are given as per market rate of that morning .</li>
+		        <li>We will deliver the order to you with the same rate in next morning </li>
+		        <li>Our delivery time is 8:00am to 11:00am </li>
+		        <li>In short, you need to order your vegs on previous day of when you want to recieve</li>
+		        <li>Currently we are using POD method , (Pay On Delivery) </li>
+		        <li>We prioritize contact less payment methods. Co-operate us to recive cashless payments</li>
+		        <li>Some rare item or seasonal item may not be delvired due to unavailability on the next morning </li>
+		        
+		        <li> Our service is currently operational in Bishnupur town .</li>
+		        <li>All the products images are sample only , original item may differ . </li>
+		    </ul>
+		</div>
+		<div class="about">
+		    <h3>Preface</h3>
+		    <p>
+		        Given the covid crisis it has become an absolute necessity for us to stay in our homes to keep ourselves safe and to stop the spread of this corona virus.
+		    </p>
+		    <p>
+		        But still people have to go outside of their homes to buy some essential commodities like groceries, vegetables, medicines etc. Because of that in places like some sabji markets we can observe that there are gatherings which can be very dangerous for us and for our society as well. In view of that we have taken a small initiative to tackle this problem.
+
+		    </p>
+		    <p>
+		        We have developed this website from which any vegetables can be ordered online and will be delivered in your home within some short span of time. We can assure you that this small initiative can result in a very significant impact on our society in this challenging time.
+		    </p>
+		    <p>
+		        It is our earnest request to you, please stay  in your homes to make yourself, the society and in a large scale the country safe.
+		    </p>
+		</div>
+	</div>
+	
+	<div class="grid">
+		<ul class="products_grid">
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\potato.jpg" alt="potato picture" class="" />
+				<h5 class="rate">18/kg</h5>
+				<h4 class="item_name">Potato</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\bitter.jpg" alt="picture" class="" />
+				<h5 class="rate">20/kg</h5>
+				<h4 class="item_name">Bitter</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\eggplant.jpg" alt="picture" class="" />
+				<h5 class="rate">16/kg</h5>
+				<h4 class="item_name">Eggplant</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\carrot.jpg" alt="carrot picture" class="" />
+				<h5 class="rate">20/kg</h5>
+				<h4 class="item_name">Carrots</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\tomato.jpg" alt="tomato picture" class="" />
+				<h5 class="rate">15/kg</h5>
+				<h4 class="item_name">Tomato</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\bottlegourd.jpg" alt="bottle gourd picture" class="" />
+				<h5 class="rate">10/kg</h5>
+				<h4 class="item_name">Bottle Gourd</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\jackfruit.jpg" alt="jackfruit picture" class="" />
+				<h5 class="rate">25/kg</h5>
+				<h4 class="item_name">Jack Fruit</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\greenokra.jpg" alt="Green Orka picture" class="" />
+				<h5 class="rate">15/kg</h5>
+				<h4 class="item_name">Green Okra</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\greenpumpkin.jpg" alt="pumpkin picture" class="" />
+				<h5 class="rate">10/kg</h5>
+				<h4 class="item_name">Green Pumpkin</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\garlic.jpg" alt=" picture" class="" />
+				<h5 class="rate">160/kg</h5>
+				<h4 class="item_name">Garlic</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\onion.jpg" alt="onion picture" class="" />
+				<h5 class="rate">25/kg</h5>
+				<h4 class="item_name">Onion</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\pointedgourd.jpg" alt="pointed groud picture" class="" />
+				<h5 class="rate">20/kg</h5>
+				<h4 class="item_name">Pointed Groud</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\ginger.jpg" alt="ginger picture" class="" />
+				<h5 class="rate">100/kg</h5>
+				<h4 class="item_name">Ginger</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\ridgegourd.jpg" alt="Ridge Gourd picture" class="" />
+				<h5 class="rate">30/kg</h5>
+				<h4 class="item_name">Ridge Gourd</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\capsicum.jpg" alt="Capsicum picture" class="" />
+				<h5 class="rate">100/kg</h5>
+				<h4 class="item_name">Capsicum</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\cucumber.jpg" alt="cucumber picture" class="" />
+				<h5 class="rate">20/kg</h5>
+				<h4 class="item_name">Cucumber</h4>
+			</li>
+			<li class="product"  onclick="openCart()">
+				<img src="res\products\longbean.jpg" alt="long bean picture" class="" />
+				<h5 class="rate">15/kg</h5>
+				<h4 class="item_name">Long Bean</h4>
+			</li>
+	<!--		<li class="product"  onclick="openCart()">
+				<img src="res\products\.jpg" alt=" picture" class="" />
+				<h5 class="rate">0/kg</h5>
+				<h4 class="item_name"></h4>
+			</li>
+	-->
+		</ul>
+	
+	</div>
+	<div class="contact">
+	    <h4>Contact Us</h4>
+	    <address>
+	        Mansatala Sabji Bazar,<br>
+	        Bishnupur , Bankura <br>
+	        West Bengal, Pin-722122.
+	    </address>
+	    <img src="res/whatsapp.svg" alt="whtaspp logo"/><span>Whatsapp Us : 9064973472</span><br>
+	    <img src="res/gmail.svg" alt="gmail logo" /> <span>Mail Us : sabjishak@gmail.com</span><br>
+	    <p>cooperation is heartily requested</p>
+	</div>
+	
+	<div class="credit">
+	    
+	    <h4>Icons made by </h4>
+	    <a href="https://www.flaticon.com/authors/ultimatearm" title="ultimatearm">
+		ultimatearm
+	    </a>
+
+	    <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+	    Freepik
+	    </a>
+	
+	    <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons"></a> 
+	    <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>
+	    <br>
+	    from 
+	    <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+	</div>
+
+	        
+	<div class="footer">
+		<div class="container">
+			<div  class="nav home">
+				<a href="index.htm">
+					<img src="res\home.svg" alt="" class="navicon " />
+				</a>
+			</div>
+			<div class="nav cart">
+				<a href="cart">
+					<img src="res\cart.svg" alt="" class="navicon " />
+				</a>
+			</div>
+			<div class="nav orders">
+				<a href="myorders">
+				<img src="res\order.svg" alt="" class="navicon " />
+				</a>
+			</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.5.0.min.js"
+  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  crossorigin="anonymous"></script>
+</body>
+</html>

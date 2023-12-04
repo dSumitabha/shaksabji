@@ -1,0 +1,75 @@
+* {
+	margin : 0;
+	padding : 0;
+	font-family: 'Baloo Paaji 2', cursive;
+}
+:root {
+	--colorv : #d9ffcc;
+	--colorx : #06f906 ;
+	--colory : #67fe34;
+	--colorz : #005600 ;
+	--colorw : #fff;
+	--colorb : #000;
+}
+#noOd {
+    width: calc(90% - 2px);
+    margin: 20vh auto;
+    display: none;
+    font-size: 1.5em;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+#orderIds {
+    width : calc(100%-2px);
+    margin : 0 auto;
+    border-bottom : 1px solid var(--colorz);
+    display : none;
+    list-style : none;
+    text-align : center;
+}
+.odliEm {
+    color: var(--colorz);
+    width: 340px;
+    padding: 11px 0px;
+    margin: 10px auto;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    box-shadow: inset 0 1px 4px -1px var(--colorz);
+}
+			/* Footer */
+.footer {
+	height : 8vh;
+	position : fixed;
+	bottom : 0;
+	width : 100%;
+	background-image: url(../res/navwave.svg);
+    background-repeat: no-repeat;
+	background-position-y : bottom;
+	background-position-x : center;
+	background-size : cover;
+}
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content : center ;
+	position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.nav
+  {
+	width : 100%;
+	text-align : center;
+	font-size : 0.3em;
+}
+.navicon {
+	height : 5vh;
+}
+.credit {
+    padding : 5vh 0 10vh 0;	
+	text-align : center ;
+    font-size : 0.5em;
+    border-top: 6px solid var(--colorz);
+    box-shadow: inset 0px 3px 0px var(--colorx);
+}

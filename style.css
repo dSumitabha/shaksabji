@@ -1,0 +1,162 @@
+*{
+	margin : 0;
+	padding : 0;
+	font-family: 'Baloo Tamma 2', cursive;
+}
+/* ::-webkit-scrollbar {
+  width: 10px;
+} */
+
+:root {
+	--colorv : #d9ffcc;
+	--colorx : #06f906 ;
+	--colory : #67fe34;
+	--colorz : #005600 ;
+	--colorw : #fff;
+	--colorb : #000;
+}
+
+.icondiv {
+	text-align : center;
+}
+.icondiv > #logo {
+    font-family: 'Merienda One', cursive;
+    color : var(--colorz);
+    padding: 2.5vh 0;
+    font-size: 35px;
+}
+.about {
+    width: 90%;
+    text-align: center;
+    border-bottom: 1px solid var(--colorz);
+    box-shadow: 0px 0px 10px -1px var(--colorz);
+    margin: 10px auto 20px auto;
+}
+.about > h2, h5, h6 {
+    color : var(--colorz);
+}
+.about > p{
+    text-align : justify;
+    margin : 1em 0.5em;
+}
+div.about > ul {
+    width: 95%;
+    margin: auto;
+    display : none;
+    color : var(--colorz);
+    text-align: justify;
+    list-style: square inside url("res/heart.png");
+}
+div.about > ul > li{
+    
+    padding: 2vh 2.5vw;
+}
+div.about > button {
+    background-image: linear-gradient(180deg , var(--colorz) , var(--colory));
+    border-bottom: 2px solid var(--colorx);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: inset 0px -1px 4px 1px var(--colorw);
+    outline : none;
+    color: var(--colorw);
+    padding: 5px 0;
+    border-radius: 20px;
+    margin: 10px;
+    width : 40%;
+}
+div.about > button:hover {
+	background-image : linear-gradient(180deg , var(--colorz) , var(--colorx));
+}
+div.about > button:active {
+	transform : translateY(1px);
+	background-image : linear-gradient(0deg , var(--colorz) , var(--colorx));
+	box-shadow: inset 0px 1px 4px 1px var(--colorw);
+}
+.grid {
+	padding : 5vh 0;
+	margin-bottom: 10vh;
+}
+.products_grid {
+	width : calc( 100% - 10px);
+	text-align : center;
+	margin : auto
+}
+.product {
+	display : inline-block;
+	width : 300px;
+	text-align : center;
+	border : 1px solid green;
+	margin : 10px;
+}
+.product > img {
+	width : 300px;
+}
+.product > h5 {
+	display : block;
+}
+.product > h4 {
+	background-color : yellow ; 
+	display : block;
+	width : 100%;
+	
+}
+
+
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content : center ;
+	position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.contact {
+    border-top: 6px solid var(--colorz);
+    box-shadow: inset 0px 3px 0px var(--colorx);
+    margin : 5vh 0 0 0;
+    text-align : center;
+    color : var(--colorz);
+}
+.contact > h4 {
+    font-size : 2em;
+    margin : 3vh 0;
+}
+
+.contact > address {
+    margin : 4vh 0;
+}
+
+.contact >img {
+    width : 15px;
+    height : 15px;
+    padding-right : 15px;
+}
+.credit {
+    padding : 5vh 0 10vh 0;	
+	text-align : center ;
+    font-size : 0.8em;
+    box-shadow: inset 0px 3px 0px var(--colorx);
+}
+			/* Footer */
+.footer {
+	height : 8vh;
+	position : fixed;
+	bottom : 0;
+	width : 100%;
+	background-image: url(res/navwave.svg);
+    background-repeat: no-repeat;
+	background-position-y : bottom;
+	background-position-x : center;
+	background-size : cover;
+}
+.nav
+  {
+	width : 100%;
+	text-align : center;
+	font-size : 0.3em;
+}
+.navicon {
+	height : 5vh;
+}

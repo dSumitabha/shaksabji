@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+	<meta name="description" content="We deliver fresh vegetable locally in Bishnupur city. User can place order online form this site , and our team will deliver product to the user">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="theme-color" content="#005600" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#005600">
+    <meta name="apple-mobile-web-app-title" content="Shaksabji">
+    <link rel="apple-touch-icon" href="res/logo/icon152.png">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Paaji+2|Baloo+Bhai|Dosis|Inconsolata|Quicksand+2&display=swap" rel="stylesheet">
+	<link rel="icon" href="../res/logo/iconcm.png" type="image/png" sizes="16x20">
+	<title> Order vegetables online within bishnupur</title>
+	
+</head>
+<body onload="logIn(),assignRate()">
+
+	<p id="demo"></p>
+	<div class="userinfo">
+		<div class="existing" id="existing" onclick="showUserinfo()">
+			<h4> Welcome <span id="fnameresult"></span>,</h4>
+			<div id="hidden-data">
+				<h5 id="contact"></h5>
+				<p id="address"> <span id="areaname"></span> , <span id="landmark"></span>.</p>
+				<p id="towndist"> Bishnupur , Bankura </p>
+			</div>
+		</div>
+		<div class="new" id="signin">
+		    <form method="POST" action="signup.php">
+				<input type="text" name="cntnum" id="cntnum" placeholder="10 digit mobile number" minlength="10" maxlength="10" pattern="[6-9][0-9]{9}" required/>
+				<br>
+				<input type="text" name="fname" id="fname" placeholder="firstname" minlength="3" maxlength="15" required />
+				<input type="text" name="lname" id="lname" placeholder="lastname" minlength="2" maxlength="15" required/>
+				<br>
+				<input type="text" name="lmark" id="lmark" placeholder="landmark" minlength="5" maxlength="50" required/>
+				<br>
+				<input type="text" name="area" id="area" placeholder="area-name" minlength="8" maxlength="50" required/>
+				<br>
+				<input type="text" name="town" id="town" value="Bishnupur" readonly/>
+				<input type="text" name="dist" id="dist" value="Bankura" readonly/>
+				<br>
+				<h5> 722122 </h5>
+				<input type="submit" value="Save" onclick="saveLocally()"/> 
+            </form>
+		</div>
+	</div>
+
+	<div class="selected" id="cartCont">
+			
+			<div class="addeditem" id="potatoadded" >
+				<img class="prthumb" src="../res\products\potato.jpg" alt="Potato picture" />
+				<h5 class="itemname">Potato</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs.<span></span></p> 
+			</div>
+			<div class="addeditem" id="lbeanadded">
+				<img class="prthumb" src="../res\products\longbean.jpg" alt="Long Bean Picture" />
+				<h5 class="itemname">Long Bean</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span></span></p> 
+			</div>
+			<div class="addeditem" id="bitteradded">
+				<img class="prthumb" src="../res\products\bitter.jpg" alt="Bitter picture" />
+				<h5 class="itemname">Bitter</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span></span></p> 
+			</div>
+			<div class="addeditem" id="groudadded">
+				<img class="prthumb" src="../res\products\bottlegourd.jpg" alt="Bottle Gourd Picture" />
+				<h5 class="itemname">Bottle Groud</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span></span></p> 
+			</div>
+			<div class="addeditem" id="cabbgeadded">
+				<img class="prthumb" src="../res\products\cabbge.jpg" alt="" />
+				<h5 class="itemname">Cabbage</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="carrotadded">
+				<img class="prthumb" src="../res\products\carrot.jpg" alt="carrot picture" />
+				<h5 class="itemname">Carrot</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="eggplantadded">
+				<img class="prthumb" src="../res\products\eggplant.jpg" alt="eggplant picture" />
+				<h5 class="itemname">Brinjal</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="pumpkinadded">
+				<img class="prthumb" src="../res\products\greenpumpkin.jpg" alt="pumpkin icture" />
+				<h5 class="itemname">Pumpkin</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="tomatoadded">
+				<img class="prthumb" src="../res\products\tomato.jpg" alt="tomato picture" />
+				<h5 class="itemname">Tomato</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="okraadded">
+				<img class="prthumb" src="../res\products\greenokra.jpg" alt="green okra" />
+				<h5 class="itemname">Green Okra</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="jackfruitadded">
+				<img class="prthumb" src="../res\products\jackfruit.jpg" alt="Jackfruit Picture" />
+				<h5 class="itemname">Jackfruit</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+		<!--	<div class="addeditem" id="added">
+				<img class="prthumb" src="../res\products\.jpg" alt="" />
+				<h5 class="itemname"></h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+		-->	
+		    <div class="addeditem" id="garlicadded">
+				<img class="prthumb" src="../res\products\garlic.jpg" alt="Garlic picture" />
+				<h5 class="itemname">Garlic</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+		    <div class="addeditem" id="gingeradded">
+				<img class="prthumb" src="../res\products\ginger.jpg" alt="Ginger Picture" />
+				<h5 class="itemname">Ginger</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="greenbananaadded">
+				<img class="prthumb" src="../res\products\greenbanana.jpg" alt="" />
+				<h5 class="itemname">Green Banana</h5>
+				<p id="Wt" class="wet"><span></span>piece</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+		    <div class="addeditem" id="mintladded">
+				<img class="prthumb" src="../res\products\mintleaf.jpg" alt="" />
+				<h5 class="itemname">Mint Leaf</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="cocciniaadded">
+				<img class="prthumb" src="../res\products\coccinia.jpg" alt="" />
+				<h5 class="itemname">Coccinia</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="gingeradded">
+				<img class="prthumb" src="../res\products\ginger.jpg" alt="" />
+				<h5 class="itemname">Ginger</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="garlicadded">
+				<img class="prthumb" src="../res\products\ginger.jpg" alt="" />
+				<h5 class="itemname">Garlic</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="onionadded">
+				<img class="prthumb" src="../res\products\onion.jpg" alt="" />
+				<h5 class="itemname">Onion</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="rgourdadded">
+				<img class="prthumb" src="../res\products\ridgegourd.jpg" alt="" />
+				<h5 class="itemname">Ridge Gourd</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="sjuteadded">
+				<img class="prthumb" src="../res\products\jutespinch.jpg" alt="" />
+				<h5 class="itemname">Jute Spinch</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="capsicumadded">
+				<img class="prthumb" src="../res\products\capsicum.jpg" alt="" />
+				<h5 class="itemname">Capsicum</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="cucumberadded">
+				<img class="prthumb" src="../res\products\cucumber.jpg" alt="" />
+				<h5 class="itemname">Cucumber</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="gchilliadded">
+				<img class="prthumb" src="../res\products\greenchilli.jpg" alt="" />
+				<h5 class="itemname">Green Chilli</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="pgourdadded">
+				<img class="prthumb" src="../res\products\pointedgourd.jpg" alt="" />
+				<h5 class="itemname">Pointed Gourd</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="bananafadded">
+				<img class="prthumb" src="../res\products\bananaflower.jpg" alt="Banana Flower" />
+				<h5 class="itemname">Banana Flower</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="malabaradded">
+				<img class="prthumb" src="../res\products\malabar.jpg" alt="" />
+				<h5 class="itemname"></h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+			<div class="addeditem" id="arumadded">
+				<img class="prthumb" src="../res\products\arum.jpg" alt="Arum Picture" />
+				<h5 class="itemname">Arum Root</h5>
+				<p id="Wt" class="wet"><span></span>gm</p>
+				<p class="itemprice"> Rs. <span ></span></p> 
+			</div>
+		
+		
+			<p id="cartAlert"> Add item to your cart from below  </p>
+			<div class="addeditem" id="dlCost">
+			    <h5> Shipping Cost </h5>
+			    <h5>Rs. 0</h5>
+			</div>
+			
+			<p id="ttl" > Rs. <span id="total"></span>.00</p>
+			<button id="placeorder" onclick="placeOrder()">Confirm Order</button>
+	</div>
+	<p id="svop"></p>
+	
+	
+	
+			<!-- Selection -->
+	<div class="selection" onload="">
+		<ul>
+			<li class="item" id="potato">
+				<div >
+					<img class="itemthumb" src="../res\products\potato.jpg" alt="" />
+					<h5>Potato</h5>
+					<p>Rs<span id="rateOutput101"></span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale101">
+					<input type="range" class="slider" min="500" max="2000" step="250" value="500" oninput="getWt(event)"/>
+					<h6><span>500</span> gm</h6>
+				</div>
+			</li>
+			
+			<li class="item" id="lbean">
+				<div>
+					<img class="itemthumb" src="../res\products\longbean.jpg" alt="Picture of Bean" />
+					<h5>Long Bean</h5>
+					<p>Rs<span id="rateOutput111"></span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" class="slider" min="100" max="1000" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span> gm</h6>
+				</div>
+			</li>
+			
+			<li class="item" id="bitter">
+				<div>
+					<img class="itemthumb" src="../res\products\bitter.jpg" alt="" />
+					<h5>Bitter</h5>
+					<p>Rs<span id="rateOutput121"></span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" class="slider" min="100" max="1000" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span> gm</h6>
+				</div>
+			</li>
+			
+			<li class="item" id="groud">
+				<div>
+					<img class="itemthumb" src="../res\products\bottlegourd.jpg" alt="" />
+					<h5>Bottle Groud</h5>
+					<p>Rs<span id="rateOutput131"></span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" class="slider" min="500" max="2000" step="500" value="500" oninput="getWt(event)"/>
+					<h6><span>500</span> gm</h6>
+				</div>
+			</li>
+			
+			<li class="item" id="cabbge">
+				<div>
+					<img class="itemthumb" src="../res\products\cabbge.jpg" alt="" />
+					<h5>Cabbage</h5>
+					<p>Rs<span id="rateOutput141"></span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" class="slider" min="500" max="2000" step="250" value="500" oninput="getWt(event)"/>
+					<h6><span>500</span> gm</h6>
+				</div>
+			</li>
+			
+			<li class="item" id="carrot">
+				<div>
+					<img class="itemthumb" src="../res\products\carrot.jpg" alt="" />
+					<h5>Carrot</h5>
+					<p>Rs<span id="rateOutput151"></span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" class="slider" min="200" max="1000" step="50" value="200" oninput="getWt(event)"/>
+					<h6><span>200</span> gm</h6>
+				</div>
+			</li>
+			
+			<li class="item" id="eggplant">
+				<div>
+					<img class="itemthumb" src="../res\products\eggplant.jpg" alt="" />
+					<h5>Brinjal</h5>
+					<p>Rs<span id="rateOutput161"></span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" class="slider" min="200" max="1000" step="100" value="200" oninput="getWt(event)"/>
+					<h6><span>200</span> gm</h6>
+				</div>
+			</li>
+			
+			<li class="item" id="pumpkin">
+				<div>
+					<img class="itemthumb" src="../res\products\greenpumpkin.jpg" alt="" />
+					<h5>Green Pumpkin</h5>
+					<p>Rs<span id="rateOutput171"></span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" class="slider" min="500" max="2000" step="250" value="500" oninput="getWt(event)"/>
+					<h6><span>500</span> gm</h6>
+				</div>
+			</li>
+			
+			<li class="item" id="tomato">
+				<div>
+					<img class="itemthumb" src="../res\products\tomato.jpg" alt="" />
+					<h5>Tomato</h5>
+					<p>Rs<span id="rateOutput181"></span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" class="slider" min="200" max="1000" step="50" value="200" oninput="getWt(event)"/>
+					<h6><span>200</span> gm</h6>
+				</div>
+			</li>
+			
+			<li class="item" id="okra">
+				<div>
+					<img class="itemthumb" src="../res\products\greenokra.jpg" alt="" />
+					<h5>Green Okra</h5>
+					<p>Rs<span id="rateOutput191"></span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" class="slider" min="100" max="1000" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span> gm</h6>
+				</div>
+			</li>
+			
+			<li class="item" id="jackfruit">
+				<div>
+					<img class="itemthumb" src="../res\products\jackfruit.jpg" alt="" />
+					<h5>Jackfruit</h5>
+					<p>Rs<span id="rateOutput201"></span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" class="slider" min="500" max="2000" step="100" value="500" oninput="getWt(event)"/>
+					<h6><span>500</span> gm</h6>
+				</div>
+			</li>
+			
+
+			<li class="item" id="pgourd">
+				<div>
+					<img class="itemthumb" src="../res\products\pointedgourd.jpg" alt="" />
+					<h5>Pointed Gourd</h5>
+					<p>Rs<span id="">20</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="1000" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span> gm</h6>
+				</div>
+			</li>			
+			<li class="item" id="gchilli">
+				<div>
+					<img class="itemthumb" src="../res\products\greenchilli.jpg" alt="" />
+					<h5>Green Chilli</h5>
+					<p>Rs<span id="">50</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="1000" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span>gm</h6>
+				</div>
+			</li>
+			<li class="item" id="cucumber">
+				<div>
+					<img class="itemthumb" src="../res\products\cucumber.jpg" alt="" />
+					<h5>Cucumber</h5>
+					<p>Rs<span id="">20</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="200" max="1000" step="50" value="200" oninput="getWt(event)"/>
+					<h6><span>200</span>gm</h6>
+				</div>
+			</li>
+			<li class="item" id="capsicum">
+				<div>
+					<img class="itemthumb" src="../res\products\capsicum.jpg" alt="" />
+					<h5>Capsicum</h5>
+					<p>Rs<span id="">100</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="500" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span>gm</h6>
+				</div>
+			</li>
+			<li class="item" id="sjute">
+				<div>
+					<img class="itemthumb" src="../res\products\jutespinch.jpg" alt="" />
+					<h5>Jute Spinch</h5>
+					<p>Rs<span id="">10</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="1000" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span>gm</h6>
+				</div>
+			</li>
+			<li class="item" id="rgourd">
+				<div>
+					<img class="itemthumb" src="../res\products\ridgegourd.jpg" alt="" />
+					<h5>Ridge Gourd</h5>
+					<p>Rs<span id="">30</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="1000" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span>gm</h6>
+				</div>
+			</li>
+			<li class="item" id="onion">
+				<div>
+					<img class="itemthumb" src="../res\products\onion.jpg" alt="" />
+					<h5>Onion</h5>
+					<p>Rs<span id="">25</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="1000" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span>gm</h6>
+				</div>
+			</li>
+			<li class="item" id="garlic">
+				<div>
+					<img class="itemthumb" src="../res\products\garlic.jpg" alt="" />
+					<h5>Garlic</h5>
+					<p>Rs<span id="">160</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="500" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span>gm</h6>
+				</div>
+			</li>
+			<li class="item" id="ginger">
+				<div>
+					<img class="itemthumb" src="../res\products\ginger.jpg" alt="" />
+					<h5>Ginger</h5>
+					<p>Rs<span id="">100</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="500" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span>gm</h6>
+				</div>
+			</li>
+			<li class="item" id="coccinia">
+				<div>
+					<img class="itemthumb" src="../res\products\coccinia.jpg" alt="" />
+					<h5>Coccinia</h5>
+					<p>Rs<span id="">20</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="1000" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span>gm</h6>
+				</div>
+			</li>
+			<li class="item" id="mintl">
+				<div>
+					<img class="itemthumb" src="../res\products\mintleaf.jpg" alt="" />
+					<h5>Mint Leaf</h5>
+					<p>Rs<span id="">100</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="500" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span>gm</h6>
+				</div>
+			</li>
+			<li class="item" id="greenbanana">
+				<div>
+					<img class="itemthumb" src="../res\products\greenbanana.jpg" alt="" />
+					<h5>Green Banana </h5>
+					<p>Rs<span style="display:none">4000</span><span>4</span>/piece</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="1" max="5" step="1" value="1" oninput="getWt(event)"/>
+					<h6><span>1</span> piece</h6>
+				</div>
+			</li>
+			<li class="item" id="bananaf">
+				<div>
+					<img class="itemthumb" src="../res\products\bananaflower.jpg" alt="Banana Flower" />
+					<h5>Banana Flower</h5>
+					<p>Rs<span id="">20</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="500" max="1500" step="250" value="500" oninput="getWt(event)"/>
+					<h6><span>500</span>gm</h6>
+				</div>
+			</li>
+			<li class="item" id="malabar">
+				<div>
+					<img class="itemthumb" src="../res\products\malabar.jpg" alt="Malabar Spinach" />
+					<h5>Malabar</h5>
+					<p>Rs<span id="">10</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="1000" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span>gm</h6>
+				</div>
+			</li>
+			<li class="item" id="arum">
+				<div>
+					<img class="itemthumb" src="../res\products\arum.jpg" alt="Arum Picture" />
+					<h5>Arum Root</h5>
+					<p>Rs<span id="">60</span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="250" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span>gm</h6>
+				</div>
+			</li>
+	<!--		<li class="item" id="">
+				<div>
+					<img class="itemthumb" src="../res\products\.jpg" alt="" />
+					<h5></h5>
+					<p>Rs<span id=""></span>/kg</p>
+					<button class="add-pre" onclick="showScale(event)"></button>
+					<button class="postadd" onclick="addtoCart(event)"></button>
+				</div>
+				<div class="scale" id="scale">
+					<input type="range" id="qty" class="slider" min="100" max="1000" step="50" value="100" oninput="getWt(event)"/>
+					<h6><span>100</span>gm</h6>
+				</div>
+			</li>
+		-->	
+		</ul>
+	
+	</div>
+		
+
+
+	<div class="footer">
+		<div class="container">
+			<div  class="nav home">
+				<a href="../index.htm">
+					<img src="../res\home.svg" alt="" class="navicon " />
+				</a>
+			</div>
+			<div class="nav cart">
+				<a href="index.htm">
+					<img src="../res\cart.svg" alt="" class="navicon " />
+				</a>
+			</div>
+			<div class="nav orders">
+				<a href="../myorders">
+				<img src="../res\order.svg" alt="" class="navicon " />
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="credit">
+	Icons made by 
+	<a href="https://www.flaticon.com/authors/ultimatearm" title="ultimatearm">
+		ultimatearm
+	</a>
+		from 
+	<a href="https://www.flaticon.com/" title="Flaticon">
+		www.flaticon.com
+	</a>
+	<br>
+	<a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+	Freepik
+	</a>
+	from 
+	<a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com
+	</a>
+	<a href="https://www.flaticon.com/authors/those-icons" title="Those Icons"></a> 
+	Those Icons made by 
+	<a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> 
+	from 
+	<a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+	</div>
+	
+	<script src="cartscript.js"> </script>
+	<script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>
+</body>
+</html>
